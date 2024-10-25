@@ -1,3 +1,4 @@
+// Cria uma mensagem de carregamento
 function showLoadingMessage() {
     const loadingMessage = document.createElement('div');
     loadingMessage.classList.add('message', 'loading', 'fade-in');
@@ -5,6 +6,7 @@ function showLoadingMessage() {
     return loadingMessage;
 }
 
+// Função para habilitar ou desabilitar botões
 function disableButtons(disable) {
     const buttons = document.querySelectorAll('.buttons button');
     buttons.forEach(button => {
@@ -12,10 +14,11 @@ function disableButtons(disable) {
     });
 }
 
+// Adiciona mensagem de "Temperatura" ao chat
 function addMessageTemperatura() {
     const messageContainer = document.getElementById('message-container');
 
-    disableButtons(true);  // Desabilitar botões
+    disableButtons(true);  // Desativa os botões
 
     const sentMessage = document.createElement('div');
     sentMessage.classList.add('message', 'sent', 'fade-in');
@@ -26,6 +29,7 @@ function addMessageTemperatura() {
     const loadingMessage = showLoadingMessage();
     messageContainer.appendChild(loadingMessage);
 
+    // Simula uma resposta após 2 segundos
     setTimeout(() => {
         const temperaturaX = Math.floor(Math.random() * 35);
         const temperaturaY = Math.floor(Math.random() * 35);
@@ -37,14 +41,15 @@ function addMessageTemperatura() {
         messageContainer.replaceChild(receivedMessage, loadingMessage);
         messageContainer.scrollTop = messageContainer.scrollHeight;
 
-        disableButtons(false);  // Reabilitar botões
+        disableButtons(false);  // Reativa os botões
     }, 2000);
 }
 
+// Adiciona mensagem de "Umidade" ao chat
 function addMessageUmidade() {
     const messageContainer = document.getElementById('message-container');
 
-    disableButtons(true);  // Desabilitar botões
+    disableButtons(true);  // Desativa os botões
 
     const sentMessage = document.createElement('div');
     sentMessage.classList.add('message', 'sent', 'fade-in');
@@ -55,6 +60,7 @@ function addMessageUmidade() {
     const loadingMessage = showLoadingMessage();
     messageContainer.appendChild(loadingMessage);
 
+    // Simula uma resposta após 2 segundos
     setTimeout(() => {
         const umidade = Math.floor(Math.random() * 100);
 
@@ -65,14 +71,15 @@ function addMessageUmidade() {
         messageContainer.replaceChild(receivedMessage, loadingMessage);
         messageContainer.scrollTop = messageContainer.scrollHeight;
 
-        disableButtons(false);  // Reabilitar botões
+        disableButtons(false);  // Reativa os botões
     }, 2000);
 }
 
+// Adiciona mensagem de "Gráfico" ao chat
 function addMessageGrafico() {
     const messageContainer = document.getElementById('message-container');
 
-    disableButtons(true);  // Desabilitar botões
+    disableButtons(true);  // Desativa os botões
 
     const sentMessage = document.createElement('div');
     sentMessage.classList.add('message', 'sent', 'fade-in');
@@ -83,6 +90,7 @@ function addMessageGrafico() {
     const loadingMessage = showLoadingMessage();
     messageContainer.appendChild(loadingMessage);
 
+    // Simula uma resposta após 2 segundos
     setTimeout(() => {
         const receivedMessage = document.createElement('div');
         receivedMessage.classList.add('message', 'received', 'fade-in');
@@ -91,6 +99,6 @@ function addMessageGrafico() {
         messageContainer.replaceChild(receivedMessage, loadingMessage);
         messageContainer.scrollTop = messageContainer.scrollHeight;
 
-        disableButtons(false);  // Reabilitar botões
+        disableButtons(false);  // Reativa os botões
     }, 2000);
 }
